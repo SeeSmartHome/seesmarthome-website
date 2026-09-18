@@ -1,0 +1,38 @@
+/* Readability upgrade: preserve the editorial design while enlarging small type. */
+.nav a{font-size:14px;font-weight:600;letter-spacing:.065em;line-height:1.4}
+.header{gap:26px}
+.nav{gap:clamp(14px,1.7vw,27px)}
+.lang-btn{font-size:13px;padding:10px 12px;min-height:40px}
+.preview-note{font-size:14px;line-height:1.55;padding:12px 22px}
+.eyebrow,.section-label,.small-rule{font-size:13px;letter-spacing:.12em}
+.micro{font-size:12px;letter-spacing:.08em}
+.text-link,.btn{font-size:13px;line-height:1.45}
+.card-bottom h3{font-size:20px}
+.photo-index,.video-caption,.gallery-item figcaption,.image-note{font-size:13px}
+.contact-form label{font-size:14px}
+.footer-grid p,.footer-nav,.footer-bottom{font-size:13px}
+@media(max-width:1150px){
+  .header{gap:17px}
+  .nav{gap:13px}
+  .nav a{font-size:12px;letter-spacing:.045em}
+  .lang-btn{font-size:12px;padding:9px}
+}
+/* Collapse navigation before the enlarged labels would collide. */
+@media(min-width:721px) and (max-width:960px){
+  .header{position:relative;height:82px}
+  .lang{margin-left:auto}
+  .menu{display:block;margin-left:3px}
+  .nav{display:none;position:absolute;z-index:20;top:82px;left:0;right:0;background:var(--cream);padding:23px;flex-direction:column;align-items:stretch;box-shadow:0 12px 20px #0001}
+  .nav.open{display:flex}
+  .nav a{font-size:16px;letter-spacing:.04em;padding:7px 0}
+}
+@media(max-width:720px){
+  .nav a{font-size:16px;padding:5px 0}
+  .lang-btn{font-size:12px;padding:9px}
+  .preview-note{font-size:13px;line-height:1.5;padding:11px 16px}
+  .eyebrow,.section-label,.small-rule{font-size:12px}
+  .micro{font-size:12px}
+  .text-link,.btn{font-size:13px}
+  .contact-form label{font-size:14px}
+  .hero-copy p{font-size:16px}
+}
