@@ -1,5 +1,4 @@
-# Repository is configured; still configure GitHub OAuth on Netlify first.
-# Do not publish this package as a working CMS before completing README-CMS.md.
+# SeeSmartHome Decap CMS: GitHub login must be configured in Netlify.
 backend:
   name: github
   repo: SeeSmartHome/seesmarthome-website
@@ -54,3 +53,31 @@ collections:
           - {label: 首页首屏照片, name: hero_image, widget: image}
           - {label: 项目视频（建议压缩 MP4）, name: project_video, widget: file}
           - {label: 视频封面照片, name: video_poster, widget: image}
+  - name: frequently_asked_questions
+    label: 常见问题 / FAQ
+    files:
+      - name: faq
+        label: 物流、付款和质保 / Delivery, Payment & Warranty
+        file: content/faq.json
+        format: json
+        fields:
+          - label: 常见问题列表（可以添加、删除、拖动） / Questions
+            name: items
+            widget: list
+            summary: '{{fields.question_zh}}'
+            fields:
+              - label: 分类 / Category
+                name: category
+                widget: select
+                options:
+                  - {label: 运输与交付 / Delivery, value: delivery}
+                  - {label: 报价与付款 / Payment, value: payment}
+                  - {label: 质保与售后 / Warranty, value: warranty}
+              - {label: 排序（数字越小越靠前） / Order, name: order, widget: number, value_type: int, default: 50}
+              - {label: 显示在网站 / Published, name: published, widget: boolean, default: true}
+              - {label: 荷兰语问题 / Question NL, name: question_nl, widget: string}
+              - {label: 荷兰语回答 / Answer NL, name: answer_nl, widget: text}
+              - {label: 英文问题 / Question EN, name: question_en, widget: string}
+              - {label: 英文回答 / Answer EN, name: answer_en, widget: text}
+              - {label: 中文问题 / Question ZH, name: question_zh, widget: string}
+              - {label: 中文回答 / Answer ZH, name: answer_zh, widget: text}
