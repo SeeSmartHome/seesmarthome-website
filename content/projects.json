@@ -1,36 +1,29 @@
 {
   "projects": [
     {
-      "slug": "bedroom",
-      "order": 1,
-      "published": true,
-      "featured": true,
-      "featured_order": 1,
-      "title_nl": "Slaapkamer op maat",
-      "title_en": "Made-to-measure bedroom",
-      "title_zh": "卧室一体式定制",
-      "category_nl": "Slaapkamer & garderobe",
-      "category_en": "Bedroom & wardrobe",
-      "category_zh": "卧室与衣柜",
       "description_nl": "Een lichte kastenwand met warme houtaccenten, open garderobenissen en geïntegreerde laden. De beelden tonen verschillende perspectieven op dezelfde opbergoplossing.",
-      "description_en": "Light wardrobe fronts meet warm wood accents, open hanging niches and integrated drawers. Multiple views reveal how the storage and bedroom work together.",
-      "description_zh": "浅色通顶柜门搭配木色抽屉和开放挂衣区，兼顾卧室的整体感与日常收纳。多角度展示柜体和空间的关系。",
-      "details_nl": [
-        "Lichte fronten en houtaccenten",
-        "Kamerhoge kastruimte",
-        "Geïntegreerde laden en open nissen"
-      ],
+      "title_nl": "Slaapkamer op maat",
       "details_en": [
         "Light fronts and wood accents",
         "Full-height cabinetry",
         "Integrated drawers and open niches"
       ],
+      "category_en": "Bedroom & wardrobe",
       "details_zh": [
         "浅色柜门与木纹搭配",
         "通顶柜体",
         "一体化抽屉与开放格"
       ],
-      "cover": "/assets/clean-6322.webp",
+      "slug": "bedroom",
+      "description_en": "Light wardrobe fronts meet warm wood accents, open hanging niches and integrated drawers. Multiple views reveal how the storage and bedroom work together.",
+      "featured": true,
+      "published": true,
+      "order": 1,
+      "category_zh": "卧室与衣柜",
+      "title_en": "Made-to-measure bedroom",
+      "description_zh": "浅色通顶柜门搭配木色抽屉和开放挂衣区，兼顾卧室的整体感与日常收纳。多角度展示柜体和空间的关系。",
+      "title_zh": "卧室一体式定制",
+      "cover": "/assets/uploads/map.jpg",
       "images": [
         "/assets/clean-6322.webp",
         "/assets/clean-6323.webp",
@@ -38,38 +31,38 @@
         "/assets/clean-6321.webp"
       ],
       "credit": "SeeSmartHome × MINCHO",
-      "image_notice": "原图及原有标识不作更改；请仅上传获授权的照片。"
+      "details_nl": [
+        "Lichte fronten en houtaccenten",
+        "Kamerhoge kastruimte",
+        "Geïntegreerde laden en open nissen"
+      ],
+      "image_notice": "原图及原有标识不作更改；请仅上传获授权的照片。",
+      "featured_order": 1,
+      "category_nl": "Slaapkamer & garderobe"
     },
     {
-      "slug": "wood-stone",
-      "order": 2,
-      "published": true,
-      "featured": true,
-      "featured_order": 3,
-      "title_nl": "Hout & steen in balans",
-      "title_en": "Wood & stone display wall",
-      "title_zh": "木纹与石纹展示收纳墙",
-      "category_nl": "Kastwand & display",
-      "category_en": "Storage & display",
-      "category_zh": "收纳与展示",
       "description_nl": "Een gesloten kastenwand wordt gecombineerd met verlichte legplanken en een uitgesproken steenlook achterwand. Details laten de verhouding tussen open en gesloten opbergruimte zien.",
-      "description_en": "A full-height storage wall is paired with illuminated shelves and a stone-effect backdrop. Close-ups reveal the interplay of open display and concealed storage.",
-      "description_zh": "通顶收纳柜与石纹背景板、灯带层板相结合。整体与细节照片展示封闭收纳和开放展示的平衡。",
-      "details_nl": [
-        "Gesloten kastenwand",
-        "Verlichte open legplanken",
-        "Steenlook achtergrond"
-      ],
+      "title_nl": "Hout & steen in balans",
       "details_en": [
         "Full-height cabinetry",
         "Illuminated open shelves",
         "Stone-effect backdrop"
       ],
+      "category_en": "Storage & display",
       "details_zh": [
         "通顶柜体",
         "灯光展示层板",
         "石纹背景"
       ],
+      "slug": "wood-stone",
+      "description_en": "A full-height storage wall is paired with illuminated shelves and a stone-effect backdrop. Close-ups reveal the interplay of open display and concealed storage.",
+      "featured": true,
+      "published": true,
+      "order": 2,
+      "category_zh": "收纳与展示",
+      "title_en": "Wood & stone display wall",
+      "description_zh": "通顶收纳柜与石纹背景板、灯带层板相结合。整体与细节照片展示封闭收纳和开放展示的平衡。",
+      "title_zh": "木纹与石纹展示收纳墙",
       "cover": "/assets/clean-6309.webp",
       "images": [
         "/assets/clean-6309.webp",
@@ -79,75 +72,75 @@
         "/assets/clean-6310.webp"
       ],
       "credit": "SeeSmartHome × MINCHO",
-      "image_notice": "原图及原有标识不作更改；请仅上传获授权的照片。"
+      "details_nl": [
+        "Gesloten kastenwand",
+        "Verlichte open legplanken",
+        "Steenlook achtergrond"
+      ],
+      "image_notice": "原图及原有标识不作更改；请仅上传获授权的照片。",
+      "featured_order": 3,
+      "category_nl": "Kastwand & display"
     },
     {
-      "slug": "hallway",
-      "order": 3,
-      "published": true,
-      "featured": false,
-      "featured_order": 99,
-      "title_nl": "Hal & opbergruimte",
-      "title_en": "Custom hallway storage",
-      "title_zh": "玄关与走廊收纳柜",
-      "category_nl": "Hal op maat",
-      "category_en": "Hallway cabinetry",
-      "category_zh": "玄关收纳",
       "description_nl": "Een rustige witte kastenwand met geïntegreerde laden, afgeronde hoeken en een warme houten nis. Een compact beeld van maatwerk in de hal.",
-      "description_en": "A calm white storage wall with integrated drawers, rounded corners and a warm timber niche. A concise example of hallway cabinetry.",
-      "description_zh": "白色柜门与圆角、木色开放壁龛结合，在有限的玄关空间中整合封闭收纳与抽屉。",
-      "details_nl": [
-        "Lichte, vlakke fronten",
-        "Geïntegreerde laden",
-        "Afgeronde hoeken"
-      ],
+      "title_nl": "Hal & opbergruimte",
       "details_en": [
         "Light flush fronts",
         "Integrated drawers",
         "Rounded corners"
       ],
+      "category_en": "Hallway cabinetry",
       "details_zh": [
         "简洁浅色柜门",
         "一体抽屉",
         "圆角细节"
       ],
+      "slug": "hallway",
+      "description_en": "A calm white storage wall with integrated drawers, rounded corners and a warm timber niche. A concise example of hallway cabinetry.",
+      "featured": false,
+      "published": true,
+      "order": 3,
+      "category_zh": "玄关收纳",
+      "title_en": "Custom hallway storage",
+      "description_zh": "白色柜门与圆角、木色开放壁龛结合，在有限的玄关空间中整合封闭收纳与抽屉。",
+      "title_zh": "玄关与走廊收纳柜",
       "cover": "/assets/clean-6311.webp",
       "images": [
         "/assets/clean-6311.webp"
       ],
       "credit": "SeeSmartHome × MINCHO",
-      "image_notice": "原图及原有标识不作更改；请仅上传获授权的照片。"
+      "details_nl": [
+        "Lichte, vlakke fronten",
+        "Geïntegreerde laden",
+        "Afgeronde hoeken"
+      ],
+      "image_notice": "原图及原有标识不作更改；请仅上传获授权的照片。",
+      "featured_order": 99,
+      "category_nl": "Hal op maat"
     },
     {
-      "slug": "green-studio",
-      "order": 4,
-      "published": true,
-      "featured": true,
-      "featured_order": 2,
-      "title_nl": "Groene maatwerkwand",
-      "title_en": "Green commercial cabinetry",
-      "title_zh": "商业空间绿色定制柜",
-      "category_nl": "Commercieel interieur",
-      "category_en": "Commercial interiors",
-      "category_zh": "商业空间",
       "description_nl": "Een selectie beelden van een groene kastenwand en gebogen entree. De set bevat zowel impressies als opnames op locatie; we presenteren deze duidelijk als verschillende beeldtypen.",
-      "description_en": "A green shelving installation and curved entrance, documented through design visuals and on-site photographs. The images are labelled by type rather than claiming a verified one-to-one comparison.",
-      "description_zh": "绿色定制展示柜与弧形入口的空间方案，包含设计效果图和现场照片，分别标注影像类型，不将其混称为全部实景。",
-      "details_nl": [
-        "Groene open vakken",
-        "Ontwerpvisualisaties en locatiebeelden",
-        "Gebogen entree en maatwerk"
-      ],
+      "title_nl": "Groene maatwerkwand",
       "details_en": [
         "Green open shelving",
         "Visualisations and on-site imagery",
         "Curved entrance and joinery"
       ],
+      "category_en": "Commercial interiors",
       "details_zh": [
         "绿色开放展示格",
         "效果图与现场照片",
         "弧形入口木作"
       ],
+      "slug": "green-studio",
+      "description_en": "A green shelving installation and curved entrance, documented through design visuals and on-site photographs. The images are labelled by type rather than claiming a verified one-to-one comparison.",
+      "featured": true,
+      "published": true,
+      "order": 4,
+      "category_zh": "商业空间",
+      "title_en": "Green commercial cabinetry",
+      "description_zh": "绿色定制展示柜与弧形入口的空间方案，包含设计效果图和现场照片，分别标注影像类型，不将其混称为全部实景。",
+      "title_zh": "商业空间绿色定制柜",
       "cover": "/assets/new-6333.jpeg",
       "images": [
         "/assets/new-6333.jpeg",
@@ -157,82 +150,89 @@
         "/assets/new-6332.jpeg"
       ],
       "credit": "SeeSmartHome × MINCHO",
-      "image_notice": "原图及原有标识不作更改；请仅上传获授权的照片。"
+      "details_nl": [
+        "Groene open vakken",
+        "Ontwerpvisualisaties en locatiebeelden",
+        "Gebogen entree en maatwerk"
+      ],
+      "image_notice": "原图及原有标识不作更改；请仅上传获授权的照片。",
+      "featured_order": 2,
+      "category_nl": "Commercieel interieur"
     },
     {
-      "slug": "attic",
-      "order": 5,
-      "published": true,
-      "featured": false,
-      "featured_order": 99,
-      "title_nl": "Zolderkamer met maatwerk",
-      "title_en": "Attic bedroom & storage",
-      "title_zh": "阁楼儿童房与定制收纳",
-      "category_nl": "Zolder & slaapkamer",
-      "category_en": "Attic & bedroom",
-      "category_zh": "阁楼与卧室",
       "description_nl": "Een zolderkamer waarin kasten, open vakken, bed en werkplek aansluiten op het schuine dak. Dit is één ingezonden beeld; details van de uitvoering zijn niet nader vastgesteld.",
-      "description_en": "An attic room concept with cabinetry, shelves, bed and desk adapted to a sloped roof. This category currently contains one supplied photograph.",
-      "description_zh": "斜顶空间中结合衣柜、开放书架、床和书桌。当前只有一张参考照片，具体施工信息尚未补充。",
-      "details_nl": [
-        "Opbergen onder het schuine dak",
-        "Bed en werkplek",
-        "Warme houttonen"
-      ],
+      "title_nl": "Zolderkamer met maatwerk",
       "details_en": [
         "Sloped-roof storage",
         "Bed and study area",
         "Warm wood palette"
       ],
+      "category_en": "Attic & bedroom",
       "details_zh": [
         "斜顶空间收纳",
         "床与书桌组合",
         "温暖木色"
       ],
+      "slug": "attic",
+      "description_en": "An attic room concept with cabinetry, shelves, bed and desk adapted to a sloped roof. This category currently contains one supplied photograph.",
+      "featured": false,
+      "published": true,
+      "order": 5,
+      "category_zh": "阁楼与卧室",
+      "title_en": "Attic bedroom & storage",
+      "description_zh": "斜顶空间中结合衣柜、开放书架、床和书桌。当前只有一张参考照片，具体施工信息尚未补充。",
+      "title_zh": "阁楼儿童房与定制收纳",
       "cover": "/assets/new-6330.jpeg",
       "images": [
         "/assets/new-6330.jpeg"
       ],
       "credit": "SeeSmartHome × MINCHO",
-      "image_notice": "原图及原有标识不作更改；请仅上传获授权的照片。"
+      "details_nl": [
+        "Opbergen onder het schuine dak",
+        "Bed en werkplek",
+        "Warme houttonen"
+      ],
+      "image_notice": "原图及原有标识不作更改；请仅上传获授权的照片。",
+      "featured_order": 99,
+      "category_nl": "Zolder & slaapkamer"
     },
     {
-      "slug": "living",
-      "order": 6,
-      "published": true,
-      "featured": false,
-      "featured_order": 99,
-      "title_nl": "Woonruimte & scheidingswand",
-      "title_en": "Living space & partition",
-      "title_zh": "客厅木饰面与空间隔断",
-      "category_nl": "Woonruimte",
-      "category_en": "Living spaces",
-      "category_zh": "客厅空间",
       "description_nl": "Twee afzonderlijke interieurbeelden: een woonkamer met houten wandafwerking en een foto van een scheidingswand. Het gaat om een beeldselectie; niet bevestigd als één woning.",
-      "description_en": "Two separate images: a living room with timber wall cladding and an interior partition. They are grouped by subject, not presented as one verified home.",
-      "description_zh": "一张木饰面客厅照片及一张室内隔断照片，按空间类型汇总展示，尚未确认是否属于同一住宅。",
-      "details_nl": [
-        "Houten wandafwerking",
-        "Ruimtelijke scheiding",
-        "Twee afzonderlijke beelden"
-      ],
+      "title_nl": "Woonruimte & scheidingswand",
       "details_en": [
         "Timber wall treatment",
         "Interior partition",
         "Two distinct photographs"
       ],
+      "category_en": "Living spaces",
       "details_zh": [
         "木饰面墙体",
         "室内隔断",
         "两张独立图片"
       ],
+      "slug": "living",
+      "description_en": "Two separate images: a living room with timber wall cladding and an interior partition. They are grouped by subject, not presented as one verified home.",
+      "featured": false,
+      "published": true,
+      "order": 6,
+      "category_zh": "客厅空间",
+      "title_en": "Living space & partition",
+      "description_zh": "一张木饰面客厅照片及一张室内隔断照片，按空间类型汇总展示，尚未确认是否属于同一住宅。",
+      "title_zh": "客厅木饰面与空间隔断",
       "cover": "/assets/new-6329.jpeg",
       "images": [
         "/assets/new-6329.jpeg",
         "/assets/new-6328.jpeg"
       ],
       "credit": "SeeSmartHome × MINCHO",
-      "image_notice": "原图及原有标识不作更改；请仅上传获授权的照片。"
+      "details_nl": [
+        "Houten wandafwerking",
+        "Ruimtelijke scheiding",
+        "Twee afzonderlijke beelden"
+      ],
+      "image_notice": "原图及原有标识不作更改；请仅上传获授权的照片。",
+      "featured_order": 99,
+      "category_nl": "Woonruimte"
     }
   ]
 }
