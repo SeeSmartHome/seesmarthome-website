@@ -1,3 +1,3 @@
 [build]
-  command = "python3 build_site.py && python3 add_contact_channels.py && python3 apply_readability.py"
+  command = "python3 build_site.py && python3 add_contact_channels.py && python3 apply_readability.py && python3 add_faq.py"
   publish = "dist"
