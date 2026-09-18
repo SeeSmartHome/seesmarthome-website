@@ -1,0 +1,11 @@
+SeeSmartHome V9 GitHub-ready
+
+Repository: https://github.com/SeeSmartHome/seesmarthome-website.git
+
+1. Unzip this archive.
+2. Upload ALL CONTENTS of the extracted folder to the root of your GitHub repo (not the ZIP).
+3. Confirm branch main and private repository.
+4. In existing Netlify project thunderous-cranachan-51cd11, link this GitHub repo. Do not create another Netlify site.
+5. Netlify should build with python3 build_site.py and publish dist (from netlify.toml).
+6. Configure GitHub OAuth provider in Netlify (see README-CMS.md) before using /admin/. Never share OAuth secret.
+7. Keep staging site private or do not advertise it: noindex does not prevent public access. Watermarked assets remain included in this review build.

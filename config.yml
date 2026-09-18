@@ -1,0 +1,56 @@
+# Repository is configured; still configure GitHub OAuth on Netlify first.
+# Do not publish this package as a working CMS before completing README-CMS.md.
+backend:
+  name: github
+  repo: SeeSmartHome/seesmarthome-website
+  branch: main
+
+media_folder: assets/uploads
+public_folder: /assets/uploads
+publish: true
+site_url: https://thunderous-cranachan-51cd11.netlify.app
+logo_url: /assets/hero-walk-in-closet.jpeg
+
+collections:
+  - name: portfolio
+    label: 项目管理 / Portfolio
+    files:
+      - name: projects
+        label: 项目照片与介绍 / Projects
+        file: content/projects.json
+        format: json
+        fields:
+          - { label: 项目列表 / Projects, name: projects, widget: list, summary: '{{fields.title_nl}}', fields: [
+              {label: URL代号（英文小写及短横线，建立后请勿修改）, name: slug, widget: string, pattern: ['^[a-z0-9]+(?:-[a-z0-9]+)*$', '只能使用英文小写字母、数字与短横线']},
+              {label: 排序（数字越小越靠前）, name: order, widget: number, value_type: int, default: 50},
+              {label: 显示在网站, name: published, widget: boolean, default: false},
+              {label: 在首页展示, name: featured, widget: boolean, default: false},
+              {label: 首页排序, name: featured_order, widget: number, value_type: int, default: 99},
+              {label: 荷兰语名称, name: title_nl, widget: string},
+              {label: 英文名称, name: title_en, widget: string},
+              {label: 中文名称, name: title_zh, widget: string},
+              {label: 荷兰语类别, name: category_nl, widget: string},
+              {label: 英文类别, name: category_en, widget: string},
+              {label: 中文类别, name: category_zh, widget: string},
+              {label: 荷兰语介绍, name: description_nl, widget: text},
+              {label: 英文介绍, name: description_en, widget: text},
+              {label: 中文介绍, name: description_zh, widget: text},
+              {label: 荷兰语设计亮点, name: details_nl, widget: list, field: {label: 亮点, name: item, widget: string}, required: false},
+              {label: 英文设计亮点, name: details_en, widget: list, field: {label: 亮点, name: item, widget: string}, required: false},
+              {label: 中文设计亮点, name: details_zh, widget: list, field: {label: 亮点, name: item, widget: string}, required: false},
+              {label: 项目封面, name: cover, widget: image},
+              {label: 项目图库（拖动改变顺序）, name: images, widget: list, field: {label: 图片, name: image, widget: image}},
+              {label: 项目合作署名, name: credit, widget: string, default: 'SeeSmartHome × MINCHO'},
+              {label: 图片说明（如适用）, name: image_notice, widget: text, required: false}
+            ]}
+  - name: site_content
+    label: 首页图片与视频 / Home media
+    files:
+      - name: media
+        label: 首页与视频素材
+        file: content/site-media.json
+        format: json
+        fields:
+          - {label: 首页首屏照片, name: hero_image, widget: image}
+          - {label: 项目视频（建议压缩 MP4）, name: project_video, widget: file}
+          - {label: 视频封面照片, name: video_poster, widget: image}

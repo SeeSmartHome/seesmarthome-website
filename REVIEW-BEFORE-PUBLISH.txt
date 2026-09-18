@@ -1,0 +1,24 @@
+SeeSmartHome V7 — project-photo replacement (internal preview)
+
+The old V5 project image files have been excluded from this package. The old project Feature Wall page was removed and redirected to Wood & Stone.
+The previously chosen separate hero image hero-walk-in-closet.jpeg is retained as a brand hero, not an old Projects photograph.
+
+Exactly 19 newly supplied project images are bundled:
+10 from the latest SeeSmartHome_10_clean_images(2).zip, re-encoded to WebP for load speed without changing image content;
+9 from IMG_6328.jpeg through IMG_6336.jpeg, copied byte-for-byte without removing existing watermarks or graphic labels.
+
+New categories and file assignments:
+Bedroom: IMG_6322, 6323, 6320, 6321 clean (4)
+Wood & Stone: IMG_6309, 6308, 6306, 6307, 6310 clean (5)
+Hallway: IMG_6311 clean (1)
+Green commercial cabinets: IMG_6332-6336 (5), contain render/site comparison composites and platform marks
+Attic: IMG_6330 (1)
+Living / partition: IMG_6328, 6329 (2 separate images, not verified as same project)
+Materials colours: IMG_6331 (1 reference collage, not a completed project)
+
+All images are preserved; the nine watermarked photos remain visibly watermarked and the archive is NOT a completely watermark-free version.
+Six grouped project detail pages plus one Materials page, a project overview and a trilingual homepage.
+A 35-second user-uploaded video is now shown on the homepage and projects overview. The original MINCHO/Rednote video branding is preserved. Confirm permission for the video before public launch.
+Contact form is statically marked for Netlify Forms; submit email notifications must be configured and tested on Netlify.
+Business legal details, privacy notice, project-specific attribution of the new nine photos and form delivery need confirmation before a public launch.
+Do not upload to the production site until you have reviewed these items. No deployment was made as part of this file build.
