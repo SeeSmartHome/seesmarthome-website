@@ -1,0 +1,85 @@
+{
+  "items": [
+    {
+      "category": "delivery", "order": 10, "published": true,
+      "question_nl": "Hoe lang duurt een maatwerkproject?",
+      "answer_nl": "Na het vastleggen van de tekeningen en materialen ontvangt u een planning of een verwachte levertijd in de offerte of overeenkomst. Productie, internationaal vervoer en eventuele douaneafhandeling kunnen invloed hebben op de planning. Als de verwachte levering verandert, bespreken wij de actuele stand met u.",
+      "question_en": "How long does a made-to-measure project take?",
+      "answer_en": "Once drawings and materials are agreed, the quotation or agreement sets out a schedule or estimated delivery time. Manufacturing, international transport and any customs procedures may affect timing. If the expected delivery changes, we will discuss the updated status with you.",
+      "question_zh": "全屋定制一般需要多长时间？",
+      "answer_zh": "图纸和材料确认后，我们会在报价或合同中列明项目进度或预计交付时间。生产、国际运输及可能涉及的清关都可能影响时间。如预计交付时间发生变化，我们会与您沟通最新进度。"
+    },
+    {
+      "category": "delivery", "order": 20, "published": true,
+      "question_nl": "Zijn transport, uitladen en montage inbegrepen?",
+      "answer_nl": "Dat verschilt per project. In de offerte staat welke kosten en werkzaamheden zijn inbegrepen, zoals vervoer naar het afgesproken adres, uitladen, naar binnen dragen, montage en afvoer van verpakkingen. Werkzaamheden die niet zijn opgenomen, zijn niet automatisch inbegrepen.",
+      "question_en": "Are delivery, unloading and installation included?",
+      "answer_en": "This depends on the project. The quotation specifies which costs and services are included, such as transport to the agreed address, unloading, carrying items indoors, installation and packaging removal. Services not listed are not automatically included.",
+      "question_zh": "报价是否包含运输、卸货和安装？",
+      "answer_zh": "具体取决于项目。报价单会明确列出包含的费用和服务，例如运送至约定地址、卸货、搬运入户、安装以及包装清运。未列明的服务不视为自动包含。"
+    },
+    {
+      "category": "delivery", "order": 30, "published": true,
+      "question_nl": "Wat als een onderdeel beschadigd of onvolledig aankomt?",
+      "answer_nl": "Maak indien mogelijk foto's van de verpakking en het betreffende onderdeel en neem zo snel mogelijk contact met ons op met uw projectgegevens. Wij beoordelen de situatie en bespreken een passende oplossing. Uw wettelijke rechten als consument blijven van kracht.",
+      "question_en": "What if an item arrives damaged or incomplete?",
+      "answer_en": "If possible, photograph the packaging and affected item, and contact us promptly with your project details. We will assess the situation and discuss an appropriate solution. Your statutory consumer rights remain unaffected.",
+      "question_zh": "货物到达时发现破损或缺件怎么办？",
+      "answer_zh": "请尽可能拍摄包装及相关部件的照片，并尽快提供项目资料联系我们。我们会核实情况并沟通适当的解决方式。消费者依法享有的权利不受影响。"
+    },
+    {
+      "category": "payment", "order": 40, "published": true,
+      "question_nl": "Hoe is de offerte opgebouwd?",
+      "answer_nl": "Wij specificeren per project de afgesproken materialen, het maatwerk, vervoer, montage en eventuele opties. De offerte maakt duidelijk welke kosten en btw van toepassing zijn en wat wel en niet is inbegrepen. Controleer de specificatie voordat u akkoord geeft.",
+      "question_en": "What does the quotation include?",
+      "answer_en": "Each quotation specifies the agreed materials, custom-made elements, transport, installation and optional items. It explains the applicable costs and VAT and what is or is not included. Please review the specification before accepting.",
+      "question_zh": "报价单通常包含哪些费用？",
+      "answer_zh": "我们会按项目列明约定的材料、定制产品、运输、安装和可选项目，并说明适用费用、增值税以及包含和不包含的内容。请在确认订单前核对报价明细。"
+    },
+    {
+      "category": "payment", "order": 50, "published": true,
+      "question_nl": "Moet ik een aanbetaling doen en wanneer betaal ik het restant?",
+      "answer_nl": "Een eventuele aanbetaling en de betaalmomenten worden vooraf schriftelijk afgesproken in de offerte of overeenkomst. Wij hanteren hier geen algemeen percentage op deze pagina. Voor consumenten blijven de wettelijke regels voor vooruitbetaling van toepassing.",
+      "question_en": "Is a deposit required and when is the balance due?",
+      "answer_en": "Any deposit and payment milestones are agreed in writing in advance in the quotation or contract. This page does not state a universal deposit percentage. Statutory consumer rules on advance payments continue to apply.",
+      "question_zh": "需要支付定金吗？尾款何时支付？",
+      "answer_zh": "如需支付定金，金额和各阶段付款时间会在报价或合同中事先书面约定。本页面不承诺统一的定金比例；面向消费者的预付款仍须遵守适用法律规定。"
+    },
+    {
+      "category": "payment", "order": 60, "published": true,
+      "question_nl": "Kan ik na goedkeuring nog iets wijzigen?",
+      "answer_nl": "Geef een wijzigingsverzoek zo snel mogelijk door. Wij bekijken of aanpassing nog uitvoerbaar is en wat dit betekent voor prijs en planning. Eventuele wijzigingen leggen wij schriftelijk vast voordat wij ze uitvoeren.",
+      "question_en": "Can I make changes after approving the design?",
+      "answer_en": "Please send change requests as early as possible. We will check whether they are still feasible and explain any impact on price or schedule. Changes are documented in writing before implementation.",
+      "question_zh": "确认设计后还可以修改吗？",
+      "answer_zh": "请尽早提出修改需求。我们会根据生产进度核实可行性，以及对费用和工期的影响，并在实施前书面确认修改内容。"
+    },
+    {
+      "category": "warranty", "order": 70, "published": true,
+      "question_nl": "Welke garantie geldt voor mijn maatwerk?",
+      "answer_nl": "Bij verkoop aan consumenten geldt de Nederlandse wettelijke garantie: het product moet voldoen aan wat u er redelijkerwijs van mag verwachten. Daarvoor bestaat in Nederland geen vaste wettelijke garantietermijn. Eventuele extra commerciële garantie vermelden wij afzonderlijk en schriftelijk; die beperkt uw wettelijke rechten niet.",
+      "question_en": "What warranty applies to my custom-made furniture?",
+      "answer_en": "For sales to consumers, Dutch statutory warranty applies: the product must meet reasonable expectations. The Netherlands has no single fixed statutory warranty period. Any additional commercial warranty will be stated separately in writing and does not limit your statutory rights.",
+      "question_zh": "定制柜体有什么质保？",
+      "answer_zh": "对于消费者购买的产品，适用荷兰法定质保：产品应符合合理预期。荷兰法定质保没有统一固定年限。如另有额外商业质保，会单独以书面形式说明，且不限制您的法定权利。"
+    },
+    {
+      "category": "warranty", "order": 80, "published": true,
+      "question_nl": "Wat moet ik doen als na montage iets niet goed werkt?",
+      "answer_nl": "Mail ons uw projectgegevens, een omschrijving en bij voorkeur foto's of een korte video. Wij beoordelen het probleem en bespreken reparatie, vervanging of een andere passende oplossing. Als een product niet aan de wettelijke verwachtingen voldoet, gelden de bijbehorende consumentenrechten.",
+      "question_en": "What if something does not work properly after installation?",
+      "answer_en": "Email us your project details, a description and preferably photos or a short video. We will assess the issue and discuss repair, replacement or another appropriate solution. If a product fails to meet statutory expectations, the corresponding consumer rights apply.",
+      "question_zh": "安装后发现柜门、抽屉或五金有问题怎么办？",
+      "answer_zh": "请发送项目资料、问题描述，最好附照片或短视频至我们的邮箱。我们会核查问题，并沟通维修、更换或其他适当解决方式；如产品不符合法定质量要求，相应消费者权利仍然适用。"
+    },
+    {
+      "category": "warranty", "order": 90, "published": true,
+      "question_nl": "Hoe zit het met onderhoud en normale slijtage?",
+      "answer_nl": "Passend onderhoud hangt af van het gekozen materiaal, beslag en afwerking. Vraag ons naar het onderhoudsadvies voor uw project. Normale slijtage en schade door verkeerd gebruik verschillen van een productgebrek; dit doet niets af aan uw wettelijke rechten bij een ondeugdelijk product.",
+      "question_en": "What about maintenance and normal wear?",
+      "answer_en": "Suitable care depends on the selected materials, hardware and finishes. Ask us for maintenance guidance for your project. Normal wear and damage caused by improper use differ from a product defect; this does not affect your statutory rights where a product is non-conforming.",
+      "question_zh": "日常保养和正常磨损属于质保范围吗？",
+      "answer_zh": "保养方式取决于所选板材、五金和表面饰面，您可以向我们索取针对项目的保养建议。正常磨损、使用不当造成的损伤与产品本身的缺陷有所区别，但这不影响您针对不合格产品依法享有的权利。"
+    }
+  ]
+}
