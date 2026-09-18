@@ -118,41 +118,42 @@
       "category_nl": "Hal op maat"
     },
     {
-      "description_nl": "Een selectie beelden van een groene kastenwand en gebogen entree. De set bevat zowel impressies als opnames op locatie; we presenteren deze duidelijk als verschillende beeldtypen.",
+      "description_nl": "Een maatwerkinterieur met kamerhoge groene open kasten en een afgeronde ontvangstbalie in licht hout. De foto's tonen de kastindeling, de gebogen houtafwerking en details van de presentatievakken vanuit verschillende perspectieven.",
       "title_nl": "Groene maatwerkwand",
       "details_en": [
-        "Green open shelving",
-        "Visualisations and on-site imagery",
-        "Curved entrance and joinery"
+        "Full-height green display shelving",
+        "Curved reception desk with pale wood finish",
+        "Open compartments and cabinetry details"
       ],
       "category_en": "Commercial interiors",
       "details_zh": [
-        "绿色开放展示格",
-        "效果图与现场照片",
-        "弧形入口木作"
+        "通顶绿色定制展示柜",
+        "浅木色弧形接待台",
+        "开放格与柜体细节"
       ],
       "slug": "green-studio",
-      "description_en": "A green shelving installation and curved entrance, documented through design visuals and on-site photographs. The images are labelled by type rather than claiming a verified one-to-one comparison.",
+      "description_en": "A commercial interior combining full-height green display shelving with a curved reception desk in pale wood. The photographs show the shelving layout, curved joinery and open display details from several perspectives.",
       "featured": true,
       "published": true,
       "order": 4,
       "category_zh": "商业空间",
       "title_en": "Green commercial cabinetry",
-      "description_zh": "绿色定制展示柜与弧形入口的空间方案，包含设计效果图和现场照片，分别标注影像类型，不将其混称为全部实景。",
+      "description_zh": "通顶绿色展示收纳柜与浅木色弧形接待台相结合，六张实景照片分别呈现整体空间、柜体布局、功能和木作细节。",
       "title_zh": "商业空间绿色定制柜",
-      "cover": "/assets/new-6333.jpeg",
+      "cover": "/assets/uploads/green-studio-01.webp",
       "images": [
-        "/assets/new-6333.jpeg",
-        "/assets/new-6334.jpeg",
-        "/assets/new-6335.jpeg",
-        "/assets/new-6336.jpeg",
-        "/assets/new-6332.jpeg"
+        "/assets/uploads/green-studio-01.webp",
+        "/assets/uploads/green-studio-02.webp",
+        "/assets/uploads/green-studio-03.webp",
+        "/assets/uploads/green-studio-04.webp",
+        "/assets/uploads/green-studio-05.webp",
+        "/assets/uploads/green-studio-06.webp"
       ],
       "credit": "SeeSmartHome × MINCHO",
       "details_nl": [
-        "Groene open vakken",
-        "Ontwerpvisualisaties en locatiebeelden",
-        "Gebogen entree en maatwerk"
+        "Kamerhoge groene presentatievakken",
+        "Gebogen ontvangstbalie in licht hout",
+        "Open kastvakken en verfijnde details"
       ],
       "image_notice": "原图及原有标识不作更改；请仅上传获授权的照片。",
       "featured_order": 2,
