@@ -47,7 +47,7 @@ jobs:
           assert len(root)>=7
           assert not (out/'index (1).html').exists()
           headers=(out/'_headers').read_text()
-          assert '/*' not in headers
+          assert not headers.lstrip().startswith('/*\n')
           assert '/admin/*' in headers
           assert '06 IMAGES' in (out/'projects/green-studio.html').read_text(encoding='utf-8')
           print('Public launch checks passed; sitemap URLs:',len(root))
