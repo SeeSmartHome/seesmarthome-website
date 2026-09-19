@@ -90,12 +90,15 @@ for page in out.rglob('*.html'):
     if rel.parts[0] == 'admin':
         continue
     html = page.read_text(encoding='utf-8')
+    # Some old top-level paths are intentionally tiny redirect pages with no
+    # header or footer. Leave those redirects intact rather than failing builds.
+    if '<nav class="nav" id="nav">' not in html or '<div class="footer-nav">' not in html:
+        continue
     if 'assets/faq.css' in html:
         raise RuntimeError(f'FAQ styles already installed in {rel}')
     if html.count('</head>') != 1:
         raise RuntimeError(f'Missing head in {rel}')
     prefix = '../' * (len(rel.parts) - 1)
-    # Add only one direct navigation and one footer link per page; retain existing links.
     faq_href = '#faq' if rel == Path('index.html') else prefix + 'index.html#faq'
     nav_link = f'<a href="{faq_href}">FAQ</a>'
     nav_pattern = r'(<nav class="nav" id="nav">)(.*?)(</nav>)'
