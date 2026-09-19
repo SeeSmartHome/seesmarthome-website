@@ -13,7 +13,7 @@ jobs:
           python-version: '3.12'
       - name: Build public website
         run: |
-          python3 -m py_compile build_site.py add_contact_channels.py apply_readability.py add_faq.py sync_service_photos.py add_legal_pages.py launch_site.py
+          python3 -m py_compile build_site.py add_contact_channels.py apply_readability.py add_faq.py sync_service_photos.py add_legal_pages.py launch_site.py hide_public_whatsapp_number.py
           python3 build_site.py
           python3 add_contact_channels.py
           python3 apply_readability.py
@@ -21,7 +21,8 @@ jobs:
           python3 sync_service_photos.py
           python3 add_legal_pages.py
           python3 launch_site.py
-      - name: Verify canonical pages, privacy, sitemap and indexing safety
+          python3 hide_public_whatsapp_number.py
+      - name: Verify canonical pages, privacy, sitemap, indexing and WhatsApp display
         run: |
           python3 - <<'PY'
           from pathlib import Path
@@ -39,6 +40,13 @@ jobs:
               if 'admin' in page.parts: continue
               text=page.read_text(encoding='utf-8')
               assert 'Muntplein' not in text and 'Bertus Aafjeshove' not in text and '3437 AS' not in text, page
+              visible=text.replace('https://wa.me/31641670074', '[WHATSAPP_LINK]')
+              assert '+31 6 4167 0074' not in visible and '31641670074' not in visible, page
+          homepage=(out/'index.html').read_text(encoding='utf-8')
+          company=(out/'company.html').read_text(encoding='utf-8')
+          assert 'href="https://wa.me/31641670074"' in homepage
+          assert 'href="https://wa.me/31641670074"' in company
+          assert '>WhatsApp ↗</a>' in homepage
           privacy=(out/'privacy.html').read_text(encoding='utf-8')
           assert '<meta name="robots" content="noindex,follow">' in privacy
           assert (out/'robots.txt').exists()
@@ -50,5 +58,5 @@ jobs:
           assert not headers.lstrip().startswith('/*\n')
           assert '/admin/*' in headers
           assert '06 IMAGES' in (out/'projects/green-studio.html').read_text(encoding='utf-8')
-          print('Public launch checks passed; sitemap URLs:',len(root))
+          print('Public launch and WhatsApp visibility checks passed; sitemap URLs:',len(root))
           PY
