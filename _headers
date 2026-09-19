@@ -1,2 +1,8 @@
-/*
+/admin/*
   X-Robots-Tag: noindex, nofollow, noarchive
+
+/thank-you.html
+  X-Robots-Tag: noindex, nofollow
+
+/privacy.html
+  X-Robots-Tag: noindex, follow
