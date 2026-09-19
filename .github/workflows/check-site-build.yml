@@ -1,0 +1,42 @@
+name: Check site preview build
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Build preview site
+        run: |
+          python3 -m py_compile build_site.py add_contact_channels.py apply_readability.py add_faq.py sync_service_photos.py add_legal_pages.py
+          python3 build_site.py
+          python3 add_contact_channels.py
+          python3 apply_readability.py
+          python3 add_faq.py
+          python3 sync_service_photos.py
+          python3 add_legal_pages.py
+      - name: Verify privacy, company information and indexing safety
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          out = Path('dist')
+          pages = [out/'index.html', out/'company.html', out/'privacy.html', out/'projects/green-studio.html']
+          for p in pages:
+              content = p.read_text(encoding='utf-8')
+              assert 'noindex,nofollow,noarchive' in content, p
+              assert 'Muntplein' not in content and '3437 AS' not in content and '3437AS' not in content, p
+              assert 'privacy.html' in content and 'company.html' in content, p
+              print('Verified:', p)
+          home = (out/'index.html').read_text(encoding='utf-8')
+          assert 'data-i18n="privacy"' not in home
+          gallery = (out/'projects/green-studio.html').read_text(encoding='utf-8')
+          assert '06 IMAGES' in gallery
+          assert 'green-studio-01.webp' in gallery
+          assert 'X-Robots-Tag: noindex, nofollow, noarchive' in (out/'_headers').read_text()
+          print('Preview checks passed')
+          PY
