@@ -1,10 +1,7 @@
 #!/usr/bin/env python3
-"""Finalize the generated public website for search engines without exposing a home address.
-Run last, after all page-generating and page-editing build steps.
-"""
+"""Finalize generated website for search without exposing the owner's residential address."""
 from pathlib import Path
 from html import escape
-from datetime import date
 import json
 import re
 
@@ -14,8 +11,7 @@ BASE = 'https://seesmarthome.nl'
 if not (OUT / 'index.html').is_file() or not (OUT / 'company.html').is_file():
     raise RuntimeError('Expected site and company pages were not generated')
 
-# The old design bundle included duplicate homepage files and obsolete root-level project
-# snapshots. They must not become indexable alternatives to the CMS-generated pages.
+# Exclude obsolete duplicate root-level pages, preserving CMS-managed pages.
 allowed_root = {'index.html', 'company.html', 'privacy.html', 'thank-you.html'}
 for obsolete in OUT.glob('*.html'):
     if obsolete.name not in allowed_root:
@@ -30,6 +26,17 @@ for item in projects.get('projects', []):
 preview = re.compile(r'<div\s+class="preview-note"[^>]*>.*?</div>', re.S | re.I)
 robots_tag = re.compile(r'<meta\s+name=["\']robots["\'][^>]*>', re.I)
 footer_preview = re.compile(r'<span\s+data-i18n="footer">.*?</span>', re.S | re.I)
+privacy_alerts = {
+    'Concept voor interne beoordeling. De feitelijke bewaartermijnen en internationale doorgiften moeten vóór de definitieve lancering worden gecontroleerd.':
+      'Aanvullende informatie over de bewaartermijn van niet-afgeronde aanvragen en internationale gegevensverwerking wordt nog geverifieerd. Voor vragen kunt u ons mailen.',
+    'Draft for internal review. Actual retention periods and international transfers must be checked before final launch.':
+      'Additional information about retention of inquiries that do not become orders and international data processing is still being verified. Please email us with questions.',
+    '本页为内部审核草稿。正式上线前还需核实实际保存期限及跨境数据处理保障措施。':
+      '未成交询价的资料保存期限及跨境数据处理安排仍在核实中。如有疑问，请通过公司邮箱联系我们。',
+    'moeten voor definitieve publicatie worden gecontroleerd': 'worden nog gecontroleerd',
+    'require verification before final publication': 'are still being checked',
+    '仍需在正式发布前核实': '仍在核实',
+}
 
 for rel in pages + [Path('privacy.html'), Path('thank-you.html')]:
     path = OUT / rel
@@ -40,7 +47,6 @@ for rel in pages + [Path('privacy.html'), Path('thank-you.html')]:
     html = path.read_text(encoding='utf-8')
     html = preview.sub('', html)
     html = footer_preview.sub('<span>SeeSmartHome B.V. · Maatwerk interieurs</span>', html)
-    # Remove all old indexing directives on pages we genuinely want indexed.
     html = robots_tag.sub('', html)
     if rel in pages:
         canonical = BASE + ('/' if rel == Path('index.html') else '/' + rel.as_posix())
@@ -52,8 +58,11 @@ for rel in pages + [Path('privacy.html'), Path('thank-you.html')]:
                           html, count=1)
         html = html.replace('</head>', head + '</head>', 1)
     else:
-        # The privacy notice contains facts still awaiting confirmation; the submission
-        # confirmation page is not useful in search. Both remain available to visitors.
+        # Privacy information is available to customers, but unresolved retention and
+        # international-processing points mean this page is not yet promoted in search.
+        if rel == Path('privacy.html'):
+            for old, new in privacy_alerts.items():
+                html = html.replace(old, new)
         html = html.replace('</head>', '<meta name="robots" content="noindex,follow"></head>', 1)
     if 'INTERNAL PREVIEW' in html or 'INTERNE PREVIEW' in html or '内部预览' in html:
         raise RuntimeError('Visible preview notice remains: ' + str(rel))
@@ -61,8 +70,6 @@ for rel in pages + [Path('privacy.html'), Path('thank-you.html')]:
         raise RuntimeError('Private address detected: ' + str(rel))
     path.write_text(html, encoding='utf-8')
 
-# A sitemap should include only the publicly indexable canonical pages, never the admin,
-# privacy draft or form submission confirmation.
 urls = []
 for rel in pages:
     if not (OUT / rel).is_file():
