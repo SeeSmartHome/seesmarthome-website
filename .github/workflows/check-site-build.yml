@@ -47,6 +47,30 @@ jobs:
           assert 'href="https://wa.me/31641670074"' in homepage
           assert 'href="https://wa.me/31641670074"' in company
           assert '>WhatsApp ↗</a>' in homepage
+          # The About us section must be editable through content/about.json in
+          # all three languages and use the selected CMS image on the homepage.
+          import json, re, html
+          about=json.loads(Path('content/about.json').read_text(encoding='utf-8'))
+          src=(out/'index.html').read_text(encoding='utf-8')
+          story=re.search(r'<section class="story" id="ons-verhaal">.*?</section>', src, flags=re.S)
+          assert story, 'Homepage About us section missing'
+          section=story.group(0)
+          assert '<h2 data-i18n="storyTitle">'+html.escape(about['title_nl'], quote=True)+'</h2>' in section
+          assert '<p data-i18n="storyText">'+html.escape(about['description_nl'], quote=True)+'</p>' in section
+          assert 'src="'+html.escape(about['image'].lstrip('/'),quote=True)+'"' in section
+          assert 'alt="'+html.escape(about['image_alt'],quote=True)+'"' in section
+          js=(out/'assets/site.js').read_text(encoding='utf-8')
+          match=re.search(r'const data=(\{.*?\});let lang=', js, flags=re.S)
+          assert match, 'Multilingual website dictionary missing'
+          ui=json.loads(match.group(1))['ui']
+          for lang in ('nl','en','zh'):
+              assert ui[lang]['storyTitle']==about['title_'+lang], lang
+              assert ui[lang]['storyText']==about['description_'+lang], lang
+          cms=Path('admin/config.yml').read_text(encoding='utf-8')
+          assert 'name: about_us' in cms and 'file: content/about.json' in cms
+          for field in ('title_nl','title_en','title_zh','description_nl','description_en','description_zh','image','image_alt'):
+              assert 'name: '+field in cms, field
+          print('About us CMS fields, all translations and selected image verified')
           privacy=(out/'privacy.html').read_text(encoding='utf-8')
           assert '<meta name="robots" content="noindex,follow">' in privacy
           assert (out/'robots.txt').exists()

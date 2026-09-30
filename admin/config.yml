@@ -53,6 +53,22 @@ collections:
           - {label: 首页首屏照片, name: hero_image, widget: image}
           - {label: 项目视频（建议压缩 MP4）, name: project_video, widget: file}
           - {label: 视频封面照片, name: video_poster, widget: image}
+  - name: about_us
+    label: 关于我们 / About us
+    files:
+      - name: about
+        label: 关于我们内容 / About content
+        file: content/about.json
+        format: json
+        fields:
+          - {label: 荷兰语标题 / Title NL, name: title_nl, widget: string}
+          - {label: 荷兰语介绍 / Description NL, name: description_nl, widget: text}
+          - {label: 英文标题 / Title EN, name: title_en, widget: string}
+          - {label: 英文介绍 / Description EN, name: description_en, widget: text}
+          - {label: 中文标题 / Title ZH, name: title_zh, widget: string}
+          - {label: 中文介绍 / Description ZH, name: description_zh, widget: text}
+          - {label: 关于我们图片 / About image, name: image, widget: image}
+          - {label: 图片替代文字（更换图片时请同步修改）/ Image alt text, name: image_alt, widget: string}
   - name: frequently_asked_questions
     label: 常见问题 / FAQ
     files:

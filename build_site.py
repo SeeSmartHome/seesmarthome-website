@@ -10,6 +10,7 @@ ROOT = Path(__file__).resolve().parent
 OUT = ROOT / 'dist'
 DATA = json.loads((ROOT / 'content/projects.json').read_text(encoding='utf-8'))
 MEDIA = json.loads((ROOT / 'content/site-media.json').read_text(encoding='utf-8'))
+ABOUT = json.loads((ROOT / 'content/about.json').read_text(encoding='utf-8'))
 SITEJS = (ROOT / 'assets/site.js').read_text(encoding='utf-8')
 found = re.search(r'const data=(\{.*?\});let lang=', SITEJS, flags=re.S)
 if not found:
@@ -51,6 +52,19 @@ for p in DATA.get('projects', []):
     if p.get('published',False): projects.append(p)
 projects.sort(key=lambda p:(int(p.get('order',50)),p['slug']))
 for v in MEDIA.values(): validate_path(v)
+
+# About us is managed in the same CMS as the project portfolio. Use the same
+# validated local image path policy for new uploads.
+validate_path(ABOUT['image'])
+if not isinstance(ABOUT.get('image_alt'), str) or not ABOUT['image_alt'].strip():
+    raise ValueError('About image alt text is required')
+for lang in ('nl', 'en', 'zh'):
+    for name in ('title', 'description'):
+        key = name + '_' + lang
+        if not isinstance(ABOUT.get(key), str) or not ABOUT[key].strip():
+            raise ValueError('Missing About us field: ' + key)
+    site_data['ui'][lang]['storyTitle'] = ABOUT['title_' + lang]
+    site_data['ui'][lang]['storyText'] = ABOUT['description_' + lang]
 
 # Sync site.js's existing language logic with CMS-edited projects.
 site_data['projects'] = {}
@@ -103,6 +117,33 @@ if n != 1: raise RuntimeError('Homepage featured projects container not found')
 home = home.replace('src="assets/hero-walk-in-closet.jpeg"',f'src="{safe(MEDIA["hero_image"].lstrip("/"))}"')
 home = home.replace('src="assets/custom-interiors-poster.jpg"',f'src="{safe(MEDIA["video_poster"].lstrip("/"))}"')
 home = home.replace('src="assets/custom-interiors-project-video.mp4"',f'src="{safe(MEDIA["project_video"].lstrip("/"))}"')
+# Render the CMS-managed About us content into the Dutch default HTML. The
+# generated site.js dictionary above supplies the English and Chinese versions.
+about_match = re.search(r'<section class="story" id="ons-verhaal">.*?</section>', home, flags=re.S)
+if about_match is None:
+    raise RuntimeError('Cannot find homepage About us section')
+about_section = about_match.group(0)
+
+def replace_about(pattern, replacement, label):
+    global about_section
+    about_section, count = re.subn(pattern, replacement, about_section, count=1, flags=re.S)
+    if count != 1:
+        raise RuntimeError('Cannot locate About us ' + label)
+
+replace_about(
+    r'<div class="story-picture">\s*<img\b[^>]*>',
+    lambda m: '<div class="story-picture"><img src="' + safe(ABOUT['image'].lstrip('/')) +
+              '" alt="' + safe(ABOUT['image_alt']) + '" loading="lazy" decoding="async">',
+    'image')
+replace_about(
+    r'(<h2 data-i18n="storyTitle">).*?(</h2>)',
+    lambda m: m.group(1) + safe(ABOUT['title_nl']) + m.group(2),
+    'title')
+replace_about(
+    r'(<p data-i18n="storyText">).*?(</p>)',
+    lambda m: m.group(1) + safe(ABOUT['description_nl']) + m.group(2),
+    'description')
+home = home.replace(about_match.group(0), about_section, 1)
 (OUT/'index.html').write_text(home, encoding='utf-8')
 
 listing_path=OUT/'projects/index.html'
