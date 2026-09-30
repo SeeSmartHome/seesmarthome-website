@@ -115,8 +115,6 @@ else:
 home,n = re.subn(r'<div class="feature-grid">.*?</div><div class="section-end">',repl,home,count=1,flags=re.S)
 if n != 1: raise RuntimeError('Homepage featured projects container not found')
 home = home.replace('src="assets/hero-walk-in-closet.jpeg"',f'src="{safe(MEDIA["hero_image"].lstrip("/"))}"')
-home = home.replace('src="assets/custom-interiors-poster.jpg"',f'src="{safe(MEDIA["video_poster"].lstrip("/"))}"')
-home = home.replace('src="assets/custom-interiors-project-video.mp4"',f'src="{safe(MEDIA["project_video"].lstrip("/"))}"')
 # Render the CMS-managed About us content into the Dutch default HTML. The
 # generated site.js dictionary above supplies the English and Chinese versions.
 about_match = re.search(r'<section class="story" id="ons-verhaal">.*?</section>', home, flags=re.S)
@@ -152,8 +150,6 @@ listing,n = re.subn(r'<section class="wrap projects-grid">.*?</section>',
     '<section class="wrap projects-grid">'+''.join(card(p) for p in projects)+'</section>',
     listing,count=1,flags=re.S)
 if n != 1: raise RuntimeError('Portfolio listing section not found')
-listing=listing.replace('src="../assets/custom-interiors-poster.jpg"',f'src="../{safe(MEDIA["video_poster"].lstrip("/"))}"')
-listing=listing.replace('src="../assets/custom-interiors-project-video.mp4"',f'src="../{safe(MEDIA["project_video"].lstrip("/"))}"')
 listing_path.write_text(listing,encoding='utf-8')
 
 # Use existing branded header/footer and all existing responsive CSS for each generated detail page.

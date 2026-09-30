@@ -42,6 +42,16 @@ jobs:
               assert 'Muntplein' not in text and 'Bertus Aafjeshove' not in text and '3437 AS' not in text, page
               visible=text.replace('https://wa.me/31641670074', '[WHATSAPP_LINK]')
               assert '+31 6 4167 0074' not in visible and '31641670074' not in visible, page
+          # The public site must not serve video players or the removed MP4 file.
+          for page in out.rglob('*.html'):
+              if 'admin' in page.parts: continue
+              page_text=page.read_text(encoding='utf-8')
+              assert '<video' not in page_text.lower(), page
+              assert 'video-showcase' not in page_text, page
+              assert '.mp4' not in page_text.lower(), page
+          assert not list(out.rglob('*.mp4')), 'Video files should not be publicly deployed'
+          source_media=Path('content/site-media.json').read_text(encoding='utf-8')
+          assert 'project_video' not in source_media and 'video_poster' not in source_media
           homepage=(out/'index.html').read_text(encoding='utf-8')
           company=(out/'company.html').read_text(encoding='utf-8')
           assert 'href="https://wa.me/31641670074"' in homepage

@@ -43,16 +43,14 @@ collections:
               {label: 图片说明（如适用）, name: image_notice, widget: text, required: false}
             ]}
   - name: site_content
-    label: 首页图片与视频 / Home media
+    label: 首页图片 / Home media
     files:
       - name: media
-        label: 首页与视频素材
+        label: 首页首屏图片
         file: content/site-media.json
         format: json
         fields:
           - {label: 首页首屏照片, name: hero_image, widget: image}
-          - {label: 项目视频（建议压缩 MP4）, name: project_video, widget: file}
-          - {label: 视频封面照片, name: video_poster, widget: image}
   - name: about_us
     label: 关于我们 / About us
     files:
